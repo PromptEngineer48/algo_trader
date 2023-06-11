@@ -31,6 +31,8 @@ if prompt:
             client.login()
         except Exception as e:
             print("Some error in connection =>", e)
+            st.write("Some error in connection =>")
+            st.write(e)
 
 
     def ltp(script):
@@ -148,6 +150,8 @@ if prompt:
                         strike_price_manage = int(strike_price)
 
                         print(LTP_manage, strike_price_manage)
+                        st.write(LTP_manage)
+                        st.write(strike_price_manage)
                         
                         sl_points = 40
 
@@ -165,6 +169,7 @@ if prompt:
                                     trigger_price = new_trigger_price
                                 
                                 print("\nPresenty in CE Management Loop waiting for SL Trigger\n")
+                                st.write("Presenty in CE Management Loop waiting for SL Trigger")
                                 print("Since LTP > Trigger Price", LTP_manage, trigger_price)
 
                                 # Check if the trigger price has been reached for closing the position
@@ -196,7 +201,8 @@ if prompt:
                                 if new_trigger_price <= trigger_price:
                                     trigger_price = new_trigger_price
 
-                                print("\nPresenty in PE Management Loop waiting for SL Trigger\n")
+                                print("\nPresently in PE Management Loop waiting for SL Trigger\n")
+                                st.write("Presently in PE management Loop waiting for SL Trigger")
                                 print("Since LTP < Trigger Price", LTP_manage, trigger_price)
 
                                 if LTP_manage >= trigger_price:
@@ -213,12 +219,14 @@ if prompt:
                                     break  # Exit the while loop and end the program
                 else:
                     print("Some major issues. Order was placed but not available in positions")
+                    print("Some major issues. Order was placed but not available in positions. Pausing the code for manual checking")
                     print("Pausing the code for manual checking")
                     sleep(25000)
 
 
         else:
             print("No entry in order_details.txt.")
+            st.write("No entry in order_details.txt. And creating Fresh Orders")
             print("Creating Fresh Orders")
 
             script = 999920000 ## This is NIFTY
@@ -226,6 +234,8 @@ if prompt:
             # print("...Fetching LTP...")
             LTP = int(ltp(script))
             print("LTP", LTP)
+            st.write("LTP:")
+            st.write(LTP)
 
             csv_file = "scripmaster-csv-format.csv"  #Read the CSV file
             df = pd.read_csv(csv_file, low_memory=False) #Read into dataframe
@@ -254,7 +264,11 @@ if prompt:
                         pe_count += 1
                 
                 print('\nce count:', ce_count)
+                st.write('ce count')
+                st.write(ce_count)
                 print('pe count:', pe_count)
+                st.write('pe count')
+                st.write(pe_count)
 
                 if ce_count > pe_count:
                     CE_or_PE = "CE"
@@ -279,6 +293,8 @@ if prompt:
                 name = instrument + " " + expiry_date + " " + CE_or_PE + " " + str(strike_price) + ".00"
 
                 print("\nname: ", name)
+                st.write("name:")
+                st.write(name)
                 # name = "NIFTY 29 Jun 2023 CE 18000.00"
             except Exception as e:
                 print('Cannot construct the name:', e)
