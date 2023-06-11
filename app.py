@@ -122,10 +122,10 @@ if prompt:
         if script_code and quantity:
             # Convert the script code to an integer
             script_code = int(script_code)
-            # Check for Open Positions
-            # 
+            # Check for Open Position
+            
             positions = client.positions()
-            positions = [{'BodQty': 150, 'BookedPL': 0, 'BuyAvgRate': 186.19, 'BuyQty': 150, 'BuyValue': 27928.5, 'Exch': 'N', 'ExchType': 'D', 'LTP': 143, 'MTOM': -6478.5, 'Multiplier': 1, 'NetQty': 150, 'OrderFor': 'D', 'PreviousClose': 181.45, 'ScripCode': 55357, 'ScripName': 'BANKNIFTY 15 Jun 2023 PE 43800.00', 'SellAvgRate': 0, 'SellQty': 0, 'SellValue': 0}, {'BodQty': 150, 'BookedPL': 0, 'BuyAvgRate': 116.25, 'BuyQty': 150, 'BuyValue': 17437.5, 'Exch': 'N', 'ExchType': 'D', 'LTP': 73.65, 'MTOM': -6390, 'Multiplier': 1, 'NetQty': 150, 'OrderFor': 'D', 'PreviousClose': 122.9, 'ScripCode': 55356, 'ScripName': 'BANKNIFTY 15 Jun 2023 CE 44500.00', 'SellAvgRate': 0, 'SellQty': 0, 'SellValue': 0}]
+            # positions = [{'BodQty': 150, 'BookedPL': 0, 'BuyAvgRate': 186.19, 'BuyQty': 150, 'BuyValue': 27928.5, 'Exch': 'N', 'ExchType': 'D', 'LTP': 143, 'MTOM': -6478.5, 'Multiplier': 1, 'NetQty': 150, 'OrderFor': 'D', 'PreviousClose': 181.45, 'ScripCode': 55357, 'ScripName': 'BANKNIFTY 15 Jun 2023 PE 43800.00', 'SellAvgRate': 0, 'SellQty': 0, 'SellValue': 0}, {'BodQty': 150, 'BookedPL': 0, 'BuyAvgRate': 116.25, 'BuyQty': 150, 'BuyValue': 17437.5, 'Exch': 'N', 'ExchType': 'D', 'LTP': 73.65, 'MTOM': -6390, 'Multiplier': 1, 'NetQty': 150, 'OrderFor': 'D', 'PreviousClose': 122.9, 'ScripCode': 55356, 'ScripName': 'BANKNIFTY 15 Jun 2023 CE 44500.00', 'SellAvgRate': 0, 'SellQty': 0, 'SellValue': 0}]
 
             # Search for the script code and quantity in the open positions
             for position in positions:
