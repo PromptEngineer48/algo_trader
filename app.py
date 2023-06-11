@@ -216,13 +216,11 @@ if prompt:
                                     print("clearing the contents (from PE Management Loop)\n")
                                     with open('order_details.txt', 'w') as file:
                                         pass  # This line clears the file
-                                    break  # Exit the while loop and end the program
-                else:
-                    print("Some major issues. Order was placed but not available in positions")
-                    st.write("Some major issues. Order was placed but not available in positions. Pausing the code for manual checking")
-                    print("Pausing the code for manual checking")
-                    sleep(25000)
-
+            else:
+                print("Some major issues. Order was placed but not available in positions")
+                st.write("Some major issues. Order was placed but not available in positions. Pausing the code for manual checking")
+                print("Pausing the code for manual checking")
+                sleep(25000)
 
         else:
             print("No entry in order_details.txt.")
