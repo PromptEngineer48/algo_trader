@@ -219,7 +219,7 @@ if prompt:
                                     break  # Exit the while loop and end the program
                 else:
                     print("Some major issues. Order was placed but not available in positions")
-                    print("Some major issues. Order was placed but not available in positions. Pausing the code for manual checking")
+                    st.write("Some major issues. Order was placed but not available in positions. Pausing the code for manual checking")
                     print("Pausing the code for manual checking")
                     sleep(25000)
 
