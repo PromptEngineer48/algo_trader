@@ -85,6 +85,7 @@ if prompt:
         connect()
 
         # Read the order details from the file
+        st.write("Reading the Order Details from the file")
         try:
             with open('order_details.txt', 'r') as file:
                 order_details = file.readlines()
