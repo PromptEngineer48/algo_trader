@@ -137,7 +137,7 @@ if prompt:
                         ## Essentially, once you enter the Management, its either normal stoploss or Trailing stoploss that will hit
                         ## Once stop loss hits, you clear the order_details.txt file and break
                         print("\n...Start the Management...")
-                        st.write(..Start the Management...)
+                        st.write("..Start the Management...")
 
                         sleep(2)
                         # print("Management1")
