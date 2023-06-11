@@ -1,0 +1,4 @@
+Script Code: 55357
+Quantity: 100
+Strike Price: 18550
+CE_or_PE: PE

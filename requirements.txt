@@ -1,0 +1,8 @@
+openai
+youtube-transcript-api
+langchain
+tiktoken
+streamlit
+pandas
+py5paisa
+datetime
