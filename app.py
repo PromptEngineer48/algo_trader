@@ -107,6 +107,11 @@ if prompt:
             print('quantity: ', quantity)
             print('strike_price: ', strike_price)
             print('ce_or_pe: ', ce_or_pe, "\n")
+            
+            st.write('script_code: ', script_code)
+            st.write('quantity: ', quantity)
+            st.write('strike_price: ', strike_price)
+            st.write('ce_or_pe: ', ce_or_pe, "\n")
         
         except Exception as e:
             print("Script and Order Not found")
@@ -126,10 +131,13 @@ if prompt:
                     net_quantity = position['NetQty']
                     if net_quantity >= int(quantity):
                         print("Script Code and Quantity found in open positions.")
+                        st.write("Script Code and Quantity found in open positions.")
+                     
                         ## Managment (use break to get out of the loop)
                         ## Essentially, once you enter the Management, its either normal stoploss or Trailing stoploss that will hit
                         ## Once stop loss hits, you clear the order_details.txt file and break
                         print("\n...Start the Management...")
+                        st.write(..Start the Management...)
 
                         sleep(2)
                         # print("Management1")
@@ -166,6 +174,7 @@ if prompt:
                                     create_order(client, OrderType='S', ScripCode = int(script_code), Qty = quantity, Price = 0, strike_price = strike_price, ce_or_pe= ce_or_pe)
 
                                     print("Closing position at trigger price:", trigger_price)
+                                    st.write("Closing position at trigger price from CE management loop:")
 
                                     print("clearing the contents (from CE management loop)\n")
                                     with open('order_details.txt', 'w') as file:
@@ -196,6 +205,7 @@ if prompt:
                                     create_order(client, OrderType='S', ScripCode = int(script_code), Qty = quantity, Price = 0, strike_price = strike_price, ce_or_pe= ce_or_pe)
 
                                     print("Closing position at trigger price:", trigger_price)
+                                    st.write("Closing position at trigger price from PE management loop:")
 
                                     print("clearing the contents (from PE Management Loop)\n")
                                     with open('order_details.txt', 'w') as file:
@@ -295,6 +305,7 @@ if prompt:
 
     if __name__ == '__main__':
         while True:
+            st.write("Running Main Loop")
             main()
             sleep(5)
 
