@@ -1,6 +1,6 @@
 import streamlit as st
 # Display the Page Title
-st.title('🦜️🔗 Automatic Trader')
+st.title('Algo')
 
 prompt = st.text_input("type yes to start the show")
 
