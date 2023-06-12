@@ -29,6 +29,7 @@ def download_excel_file(url):
 def main():
     url = "https://images.5paisa.com/website/scripmaster-csv-format.csv"
     download_excel_file(url)
+    st.write("Script Downloaded")
 
 if __name__ == "__main__":
     main()
