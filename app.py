@@ -29,6 +29,7 @@ if prompt:
         try:
             client = FivePaisaClient(email=st.secrets["email"], passwd=st.secrets["passwd"], dob=st.secrets["dob"], cred=cred)
             client.login()
+            st.write("Connection Success")
         except Exception as e:
             print("Some error in connection =>", e)
             st.write("Some error in connection =>")
