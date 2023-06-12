@@ -18,16 +18,16 @@ if prompt:
     def connect():
         global client
         cred = {
-            "APP_NAME": "5P52252457",
-            "APP_SOURCE": "15132",
-            "USER_ID": "pyb6U48ghXF",
-            "PASSWORD": "JId8j0zHzmN",
-            "USER_KEY": "7MjEZ6I6VXfhNGqWi6McJ41NgzRlQn5C",
-            "ENCRYPTION_KEY": "1W85rnZDjXDxyYKysfcHdEo5NiMMa8gn"
+            "APP_NAME": st.secrets["APP_NAME"],
+            "APP_SOURCE": st.secrets["APP_SOURCE"],
+            "USER_ID": st.secrets["USER_ID"],
+            "PASSWORD": st.secrets["PASSWORD"],
+            "USER_KEY": st.secrets["USER_KEY"],
+            "ENCRYPTION_KEY": st.secrets["ENCRYPTION_KEY"]
         }
 
         try:
-            client = FivePaisaClient(email="palash14.india@gmail.com", passwd="A1b2c3d4@5", dob="19921103", cred=cred)
+            client = FivePaisaClient(email=st.secrets["email"], passwd=st.secrets["passwd"], dob=st.secrets["dob"], cred=cred)
             client.login()
         except Exception as e:
             print("Some error in connection =>", e)
