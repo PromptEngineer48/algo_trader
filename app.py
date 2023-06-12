@@ -86,6 +86,8 @@ if prompt:
     def main():
         # print("Starting Sequence")
         connect()
+        positions = client.positions()
+        st.write(positions)
 
         # Read the order details from the file
         st.write("Reading the Order Details from the file")
